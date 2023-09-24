@@ -24,6 +24,10 @@ export default function RootLayout({
         <main className={styles.main}>
           <Search />
           {children}
+          <p className={styles.main__disclaimerText}>
+            This product uses the TMDb API but is not endorsed or certified by
+            TMDb
+          </p>
         </main>
       </body>
     </html>

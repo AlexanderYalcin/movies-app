@@ -12,6 +12,14 @@
       border-radius: 10px;
     }
   }
+  &__smallItem {
+    &:hover {
+      .list__darkBg {
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0.8;
+      }
+    }
+  }
   &__linearBg {
     min-height: 80px;
     width: 100%;
@@ -25,10 +33,27 @@
     left: 0;
     padding: 19px 19px 13px;
   }
+  &__darkBg {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transition: opacity 0.3s;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   &__movieTitle {
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+  }
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
   }
 }
