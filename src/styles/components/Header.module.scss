@@ -1,13 +1,16 @@
 .header {
   font-size: 1.5rem;
   font-weight: 600;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   box-shadow: 1px 0px 0px 0px #686868;
   background-color: #171717;
 
+  &__inner {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   &__logo {
     position: absolute;
     top: 39px;

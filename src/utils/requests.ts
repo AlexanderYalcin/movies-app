@@ -27,7 +27,7 @@ export const getTopRatedMovies = async () => {
 
 export const getMoviesByQuery = async (query: string) => {
   const res = await fetch(
-    `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`
+    `${BASE_URL}/search/movie?query=${query}&include_adult=false&language=en-US&page=1&api_key=${API_KEY}`
   );
   const data = await res.json();
   return data.results;
