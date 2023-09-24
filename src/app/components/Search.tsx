@@ -1,16 +1,17 @@
 import { FC } from 'react';
+import uiStyles from '@/styles/ui.module.scss';
 
 interface SearchProps {}
 
 const Search: FC<SearchProps> = ({}) => {
   return (
     <div>
-      <form>
+      <form className={uiStyles.search}>
         <input
           type='text'
           id='searchInput'
-          placeholder='Search...'
-          className='text-black'
+          placeholder='Search movie titles'
+          className={uiStyles.search__input}
         />
       </form>
     </div>

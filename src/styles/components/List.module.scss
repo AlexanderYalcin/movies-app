@@ -1,0 +1,10 @@
+.list {
+  margin-top: 32px;
+  margin-bottom: 76px;
+  display: flex;
+  gap: 32px;
+
+  &__item {
+    max-width: 680px;
+  }
+}

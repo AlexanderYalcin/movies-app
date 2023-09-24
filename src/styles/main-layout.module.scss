@@ -1,0 +1,13 @@
+.body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(auto, 278px) 1fr;
+  gap: 32px;
+}
+
+.main {
+  margin: 40px auto;
+  padding-right: 25px;
+  max-width: 1418px;
+  width: 100%;
+}

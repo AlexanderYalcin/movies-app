@@ -19,6 +19,7 @@ const Card: FC<CardProps> = ({ movie, wideImg, imgWidth, imgHeight }) => {
     <div>
       <div>
         <Image
+          className='max-h-96 object-cover object-top'
           src={IMAGE_BASE_URL + movie.poster_path}
           alt=''
           width={imgWidth}
