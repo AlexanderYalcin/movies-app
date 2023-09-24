@@ -6,5 +6,29 @@
 
   &__item {
     max-width: 680px;
+    max-height: 384px;
+    position: relative;
+    img {
+      border-radius: 10px;
+    }
+  }
+  &__linearBg {
+    min-height: 80px;
+    width: 100%;
+    background: linear-gradient(
+      91deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0) 98.77%
+    );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 19px 19px 13px;
+  }
+  &__movieTitle {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
 }

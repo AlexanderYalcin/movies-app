@@ -25,7 +25,7 @@ export const getTopRatedMovies = async () => {
   return data.results;
 };
 
-export const getMoviesByQuery = async () => {
+export const getMoviesByQuery = async (query: string) => {
   const res = await fetch(
     `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`
   );
