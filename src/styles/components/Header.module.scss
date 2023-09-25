@@ -26,6 +26,8 @@
     flex-direction: column;
     gap: 61px;
     margin: 151px 40px;
+    z-index: 20;
+    position: relative;
   }
   &__link {
     display: flex;
@@ -60,6 +62,15 @@
   }
   &__navActive {
     left: -20px;
+  }
+  &__backdrop {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(23, 23, 23, 0.63);
   }
 }
 @media only screen and (min-width: 992px) {

@@ -12,7 +12,11 @@ const Burger: FC<BurgerProps> = ({ clicked, isOpen }) => {
       className={styles.container + ' ' + (isOpen ? styles.navOpen : '')}
       onClick={() => clicked()}
     >
-      <a id='menu-toggle' className={styles.menuToggle}>
+      <button
+        className={styles.menuToggle}
+        aria-label='menu'
+        aria-expanded={isOpen}
+      >
         <span
           className={`${styles.menuToggleBar} ${styles.menuToggleBar_top}`}
         ></span>
@@ -22,7 +26,7 @@ const Burger: FC<BurgerProps> = ({ clicked, isOpen }) => {
         <span
           className={`${styles.menuToggleBar} ${styles.menuToggleBar_bottom}`}
         ></span>
-      </a>
+      </button>
     </div>
   );
 };

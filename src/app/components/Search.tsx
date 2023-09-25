@@ -1,12 +1,10 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import uiStyles from '@/styles/ui.module.scss';
 import { useRouter } from 'next/navigation';
 
-interface SearchProps {}
-
-const Search: FC<SearchProps> = ({}) => {
+const Search = () => {
   const router = useRouter();
   const [searchText, setSearchText] = useState('');
 

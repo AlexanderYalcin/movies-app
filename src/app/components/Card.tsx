@@ -19,13 +19,15 @@ const Card: FC<CardProps> = ({ movie, wideImg, imgWidth, imgHeight }) => {
   return (
     <>
       {movie.poster_path ? (
-        <Image
-          className={styles.card}
-          src={IMAGE_BASE_URL + movie.poster_path}
-          alt=''
-          width={imgWidth}
-          height={imgHeight}
-        />
+        <div className={styles.card}>
+          <Image
+            className={styles.card__image}
+            src={IMAGE_BASE_URL + movie.poster_path}
+            alt=''
+            width={imgWidth}
+            height={imgHeight}
+          />
+        </div>
       ) : (
         <div className={styles.emptyCard}>
           <span>No image found</span>

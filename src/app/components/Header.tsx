@@ -2,14 +2,12 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from '@/styles/components/Header.module.scss';
 import Burger from '@/app/components/ui/Burger';
 
-interface HeaderProps {}
-
-const Header: FC<HeaderProps> = ({}) => {
+const Header = () => {
   const pathname = usePathname();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -74,6 +72,14 @@ const Header: FC<HeaderProps> = ({}) => {
           </ul>
         </nav>
       </div>
+      {isOpen && (
+        <Link
+          onClick={() => toggleMenu()}
+          href='#'
+          title='Close the navigation'
+          className={styles.header__backdrop}
+        ></Link>
+      )}
     </header>
   );
 };
