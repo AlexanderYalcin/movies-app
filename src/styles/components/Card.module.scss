@@ -1,0 +1,21 @@
+.card {
+  object-fit: cover;
+  object-position: top;
+  max-height: 382px;
+  margin: 0 auto;
+}
+
+.emptyCard {
+  max-height: 382px;
+  max-width: 255px;
+  height: 100%;
+  margin: auto;
+  background-color: #000;
+  border-radius: 10px;
+  transition: opacity 0.3s;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

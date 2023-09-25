@@ -1,9 +1,12 @@
 import { getMoviesByQuery } from '@/utils/requests';
 import { FC } from 'react';
 import List from '@/app/components/List';
+import uiStyles from '@/styles/ui.module.scss';
 
 interface pageProps {
-  searchParams: string;
+  searchParams: {
+    query: string;
+  };
 }
 
 const page: FC<pageProps> = async ({ searchParams }) => {
@@ -11,7 +14,8 @@ const page: FC<pageProps> = async ({ searchParams }) => {
   const searchResultMovies = await getMoviesByQuery(searchText);
 
   return (
-    <div>
+    <>
+      <h1 className={uiStyles.movieHeading}>Search</h1>
       <List
         movies={searchResultMovies}
         limit={20}
@@ -19,7 +23,7 @@ const page: FC<pageProps> = async ({ searchParams }) => {
         imgWidth={255}
         imgHeight={382}
       />
-    </div>
+    </>
   );
 };
 

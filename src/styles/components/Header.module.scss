@@ -1,18 +1,23 @@
 .header {
   font-size: 1.5rem;
   font-weight: 600;
-  box-shadow: 1px 0px 0px 0px #686868;
-  background-color: #171717;
+  background-color: #1a1a1a;
 
   &__inner {
-    height: 100vh;
+    height: 73px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    width: calc(100% - 40px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    margin: 0 20px;
   }
   &__logo {
-    position: absolute;
     top: 39px;
   }
   &__links {
@@ -39,6 +44,40 @@
         filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(151deg)
           brightness(109%) contrast(101%);
       }
+    }
+  }
+  &__nav {
+    // display: none;
+    background-color: #171717;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    max-width: 348px;
+  }
+  &__navActive {
+  }
+}
+@media only screen and (min-width: 992px) {
+  .header {
+    max-height: none;
+    background-color: #171717;
+    box-shadow: 1px 0px 0px 0px #686868;
+
+    &__inner {
+      background-color: #171717;
+      height: 100vh;
+      width: auto;
+      position: initial;
+      flex-direction: column;
+      justify-content: center;
+    }
+    &__nav {
+      position: initial;
+      width: auto;
+    }
+    &__logo {
+      position: absolute;
     }
   }
 }

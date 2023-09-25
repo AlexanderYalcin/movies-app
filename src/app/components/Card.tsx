@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
+import styles from '@/styles/components/Card.module.scss';
 
 interface CardProps {
   movie: {
@@ -16,17 +17,21 @@ const Card: FC<CardProps> = ({ movie, wideImg, imgWidth, imgHeight }) => {
     : 'https://www.themoviedb.org/t/p/w440_and_h660_face/';
 
   return (
-    <div>
-      <div>
+    <>
+      {movie.poster_path ? (
         <Image
-          className='max-h-96 object-cover object-top'
+          className={styles.card}
           src={IMAGE_BASE_URL + movie.poster_path}
           alt=''
           width={imgWidth}
           height={imgHeight}
         />
-      </div>
-    </div>
+      ) : (
+        <div className={styles.emptyCard}>
+          <span>No image found</span>
+        </div>
+      )}
+    </>
   );
 };
 

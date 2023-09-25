@@ -2,14 +2,21 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from '@/styles/components/Header.module.scss';
+import Burger from '@/app/components/ui/Burger';
 
 interface HeaderProps {}
 
 const Header: FC<HeaderProps> = ({}) => {
   const pathname = usePathname();
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <header className={styles.header}>
@@ -17,14 +24,19 @@ const Header: FC<HeaderProps> = ({}) => {
         <Link className={styles.header__logo} href='/'>
           Movies
         </Link>
-        <nav>
+        <Burger clicked={toggleMenu} isOpen={isOpen} />
+        <nav
+          className={
+            styles.header__nav + ' ' + (isOpen ? styles.header__navActive : '')
+          }
+        >
           <ul className={styles.header__links}>
             <li>
               <Link
                 className={
                   styles.header__link +
                   ' ' +
-                  (pathname == '/' || pathname == '/movies'
+                  (pathname == '/' || pathname == '/search'
                     ? styles.header__link_active
                     : '')
                 }

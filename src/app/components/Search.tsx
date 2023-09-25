@@ -3,7 +3,6 @@
 import { FC, useState } from 'react';
 import uiStyles from '@/styles/ui.module.scss';
 import { useRouter } from 'next/navigation';
-import { getMoviesByQuery } from '@/utils/requests';
 
 interface SearchProps {}
 
@@ -15,7 +14,7 @@ const Search: FC<SearchProps> = ({}) => {
     e.preventDefault();
 
     if (searchText) {
-      router.push(`/movies?query=${searchText}`);
+      router.push(`/search?query=${searchText}`);
     }
   };
 

@@ -32,3 +32,11 @@ export const getMoviesByQuery = async (query: string) => {
   const data = await res.json();
   return data.results;
 };
+
+export const getMoviesByGenre = async (genre: string) => {
+  const res = await fetch(
+    `${BASE_URL}/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genre}&api_key=${API_KEY}`
+  );
+  const data = await res.json();
+  return data.results;
+};

@@ -1,6 +1,6 @@
 .search {
   position: relative;
-  margin-bottom: 55px;
+  margin-bottom: 40px;
   &::before {
     content: '';
     display: block;
@@ -22,6 +22,8 @@
     font-style: normal;
     line-height: normal;
     position: relative;
+    width: 100%;
+    max-width: none;
     &::placeholder {
       color: #7e7e7e;
     }
@@ -33,4 +35,11 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+@media only screen and (min-width: 992px) {
+  .search {
+    margin-bottom: 55px;
+    max-width: 385px;
+  }
 }

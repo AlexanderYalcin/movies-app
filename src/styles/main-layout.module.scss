@@ -1,13 +1,12 @@
 .body {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: minmax(auto, 278px) 1fr;
-  gap: 32px;
+  grid-template-columns: 1fr;
+  margin: 73px 20px 0;
 }
 
 .main {
-  margin: 40px auto;
-  padding-right: 25px;
+  margin: 0 auto 40px;
   max-width: 1418px;
   width: 100%;
   display: flex;
@@ -17,6 +16,17 @@
     color: #838383;
     font-size: 1rem;
     text-align: center;
-    margin-top: auto
+    margin-top: auto;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .body {
+    grid-template-columns: minmax(auto, 278px) 1fr;
+    margin: 0;
+  }
+  .main {
+    margin: 40px auto;
+    padding: 0 25px;
   }
 }

@@ -28,34 +28,48 @@ const List: FC<ListProps> = async ({
   let movieLimiter = movies.slice(0, limit);
 
   return (
-    <ul className={styles.list}>
-      {movieLimiter.map((movie: Movie) => {
-        return (
-          <li
-            key={movie.id}
-            className={
-              styles.list__item + ' ' + (!wideImg ? styles.list__smallItem : '')
-            }
-          >
-            <Card
-              movie={movie}
-              wideImg={wideImg}
-              imgWidth={imgWidth}
-              imgHeight={imgHeight}
-            />
+    <>
+      {movieLimiter.length > 0 ? (
+        <ul
+          className={styles.list + ' ' + (!wideImg ? styles.list__small : '')}
+        >
+          {movieLimiter.map((movie: Movie) => {
+            return (
+              <li
+                key={movie.id}
+                className={
+                  styles.list__item +
+                  ' ' +
+                  (!wideImg ? styles.list__smallItem : '')
+                }
+              >
+                <Card
+                  movie={movie}
+                  wideImg={wideImg}
+                  imgWidth={imgWidth}
+                  imgHeight={imgHeight}
+                />
 
-            <div
-              className={wideImg ? styles.list__linearBg : styles.list__darkBg}
-            >
-              <div className={!wideImg ? styles.list__text : ''}>
-                <h3 className={styles.list__movieTitle}>{movie.title}</h3>
-                <span>{getYearFromDate(movie.release_date)}</span>
-              </div>
-            </div>
-          </li>
-        );
-      })}
-    </ul>
+                <div
+                  className={
+                    wideImg ? styles.list__linearBg : styles.list__darkBg
+                  }
+                >
+                  <div className={!wideImg ? styles.list__text : ''}>
+                    <h3 className={styles.list__movieTitle}>{movie.title}</h3>
+                    <span>{getYearFromDate(movie.release_date)}</span>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <div>
+          <p>No results found</p>
+        </div>
+      )}
+    </>
   );
 };
 
