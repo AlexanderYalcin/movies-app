@@ -26,7 +26,6 @@ const Card: FC<CardProps> = ({ movie, wideImg, imgWidth, imgHeight }) => {
             alt=''
             width={imgWidth}
             height={imgHeight}
-            style={{ width: 'auto' }}
           />
         </div>
       ) : (
