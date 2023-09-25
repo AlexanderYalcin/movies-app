@@ -33,6 +33,7 @@ const Header: FC<HeaderProps> = ({}) => {
           <ul className={styles.header__links}>
             <li>
               <Link
+                onClick={() => isOpen && toggleMenu()}
                 className={
                   styles.header__link +
                   ' ' +
@@ -53,6 +54,7 @@ const Header: FC<HeaderProps> = ({}) => {
             </li>
             <li>
               <Link
+                onClick={() => isOpen && toggleMenu()}
                 className={
                   styles.header__link +
                   ' ' +

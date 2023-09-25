@@ -65,9 +65,7 @@ const List: FC<ListProps> = async ({
           })}
         </ul>
       ) : (
-        <div>
-          <p>No results found</p>
-        </div>
+        <p className={styles.list__noResults}>No results found</p>
       )}
     </>
   );

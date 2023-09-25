@@ -28,7 +28,7 @@ const page: FC<pageProps> = async ({ searchParams }) => {
           imgHeight={382}
         />
       ) : (
-        <p>Select a category to find a movie!</p>
+        <p>Select a genre to find movies!</p>
       )}
     </>
   );
