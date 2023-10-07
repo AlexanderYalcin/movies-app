@@ -3,8 +3,13 @@ import React, { FC, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '@/styles/components/Filter.module.scss';
 
+interface Filter {
+  id: number;
+  name: string;
+}
+
 interface FiltersProps {
-  filters: Array<any>;
+  filters: Filter[];
 }
 
 const Filter: FC<FiltersProps> = ({ filters }) => {

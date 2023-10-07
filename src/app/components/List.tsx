@@ -3,19 +3,19 @@ import Card from './Card';
 import styles from '@/styles/components/List.module.scss';
 import { getYearFromDate } from '@/utils/dateUtils';
 
-interface ListProps {
-  movies: Array<Movie>;
-  limit: number;
-  imgWidth: number;
-  imgHeight: number;
-  wideImg: boolean;
-}
-
 interface Movie {
   id: number;
   title: string;
   release_date: string;
   poster_path: string;
+}
+
+interface ListProps {
+  movies: Movie[];
+  limit: number;
+  imgWidth: number;
+  imgHeight: number;
+  wideImg: boolean;
 }
 
 const List: FC<ListProps> = async ({

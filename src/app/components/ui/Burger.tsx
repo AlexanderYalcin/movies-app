@@ -8,15 +8,13 @@ interface BurgerProps {
 
 const Burger: FC<BurgerProps> = ({ clicked, isOpen }) => {
   return (
-    <div
+    <button
       className={styles.container + ' ' + (isOpen ? styles.navOpen : '')}
       onClick={() => clicked()}
+      aria-label='menu'
+      aria-expanded={isOpen}
     >
-      <button
-        className={styles.menuToggle}
-        aria-label='menu'
-        aria-expanded={isOpen}
-      >
+      <div className={styles.menuToggle}>
         <span
           className={`${styles.menuToggleBar} ${styles.menuToggleBar_top}`}
         ></span>
@@ -26,8 +24,8 @@ const Burger: FC<BurgerProps> = ({ clicked, isOpen }) => {
         <span
           className={`${styles.menuToggleBar} ${styles.menuToggleBar_bottom}`}
         ></span>
-      </button>
-    </div>
+      </div>
+    </button>
   );
 };
 
