@@ -19,27 +19,28 @@ const Filter: FC<FiltersProps> = ({ filters }) => {
   return (
     <ul className={styles.filters}>
       {filters.map((filter, index) => (
-        <li
-          onClick={(e) => {
-            if (selectedIndex === index) {
-              setSelectedIndex(null);
-              router.push(`/discover`);
-            } else {
-              setSelectedIndex(index);
-              router.push(
-                `/discover?genre=${e.currentTarget.getAttribute('value')}`
-              );
+        <li key={filter.id}>
+          <button
+            onClick={(e) => {
+              if (selectedIndex === index) {
+                setSelectedIndex(null);
+                router.push(`/discover`);
+              } else {
+                setSelectedIndex(index);
+                router.push(
+                  `/discover?genre=${e.currentTarget.getAttribute('value')}`
+                );
+              }
+            }}
+            className={
+              styles.filters__filter +
+              ' ' +
+              `${selectedIndex === index ? styles.filters__filter_active : ''}`
             }
-          }}
-          key={filter.id}
-          className={
-            styles.filters__filter +
-            ' ' +
-            `${selectedIndex === index ? styles.filters__filter_active : ''}`
-          }
-          value={filter.id}
-        >
-          {filter.name}
+            value={filter.id}
+          >
+            {filter.name}
+          </button>
         </li>
       ))}
     </ul>
