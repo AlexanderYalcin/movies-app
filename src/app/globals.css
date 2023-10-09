@@ -5,6 +5,12 @@
 body {
   color: #fff;
   background: #1a1a1a;
+
+  --black: #000;
+  --white: #fff;
+  --light-gray: #d7d7d7;
+  --medium-gray: #838383;
+  --very-dark-gray: #1a1a1a;
 }
 
 .visually-hidden {

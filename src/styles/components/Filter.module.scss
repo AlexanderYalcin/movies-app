@@ -6,7 +6,7 @@
   margin-bottom: 30px;
   &__filter {
     border-radius: 100px;
-    border: 2px solid #fff;
+    border: 2px solid var(--white);
     padding: 9px 17px;
     font-size: 1rem;
     font-style: normal;
@@ -14,13 +14,13 @@
     line-height: normal;
     cursor: pointer;
     &:hover {
-      background-color: #d7d7d7;
-      border-color: #d7d7d7;
-      color: #1a1a1a;
+      background-color: var(--light-gray);
+      border-color: var(--light-gray);
+      color: var(--very-dark-gray);
     }
     &_active {
-      background-color: #fff;
-      color: #1a1a1a;
+      background-color: var(--white);
+      color: var(--very-dark-gray);
     }
   }
 }
